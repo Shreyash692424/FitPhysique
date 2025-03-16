@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Website</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    
+    <!-- Meta Tags for SEO -->
+    <meta name="description" content="Join us to achieve your dream physique with personalized training and nutrition plans.">
+    <meta name="keywords" content="fitness, training, nutrition, health, gym">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="chatbox.css">
+
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <nav role="navigation" class="sticky-nav">
+            <div class="nav-logo">
+                <a href="#">
+                    <img src="logo1.png" alt="Fitness Logo" class="IMG" style="height: 50px;">
+                </a>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+                <li><a href="#services"><i class="fas fa-dumbbell"></i> Services</a></li>
+                <li><a href="#testimonials"><i class="fas fa-comments"></i> Testimonials</a></li>
+                <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+</body>
+</html>
+<!-- Hero Section -->
+<section class="hero">
+    <h1>Transform Your Fitness Journey</h1>
+    <p>Join us to achieve your dream physique.</p>
+    <button aria-label="Get Started">Get Started</button>
+</section>
+
+<!-- Membership Section -->
+<section id="membership" class="membership-container" role="region" aria-labelledby="membership-heading">
+    <h2 id="membership-heading">Our Membership Plans</h2>
+    
+    <div class="membership-wrapper">
+        <div class="membership-box">
+            <h3>Basic Plan</h3>
+            <p>Access to gym facilities during off-peak hours.</p>
+            <p><strong>Price:</strong> $20/month</p>
+            <button aria-label="Join Basic Plan">Join Now</button>
+        </div>
+
+        <div class="membership-box">
+            <h3>Standard Plan</h3>
+            <p>Access to gym facilities and group classes.</p>
+            <p><strong>Price:</strong> $40/month</p>
+            <button aria-label="Join Standard Plan">Join Now</button>
+        </div>
+
+        <div class="membership-box">
+            <h3>Premium Plan</h3>
+            <p>All-inclusive access to gym facilities, group classes, and personal training sessions.</p>
+            <p><strong>Price:</strong> $60/month</p>
+            <button aria-label="Join Premium Plan">Join Now</button>
+        </div>
+    </div>
+</section>
+
+
+  <!-- Services Section -->
+<section id="services" class="service-container" role="region" aria-labelledby="services-heading">
+    <h2 id="services-heading">Our Services</h2>
+    
+    <div class="service-wrapper">
+        <div class="service-box">
+            <img src="IMG4.PNG.webp" alt="Personal Training" class="service-img" loading="lazy">
+            <h3>Personal Training</h3>
+            <p>Get customized workout plans tailored to your fitness goals.</p>
+        </div>
+
+        <div class="service-box">
+            <img src="IMG3.PNG.webp" alt="Nutrition Plans" class="service-img" loading="lazy">
+            <h3>Nutrition Plans</h3>
+            <p>Personalized diet plans to maximize your results.</p>
+        </div>
+
+        <div class="service-box">
+            <img src="IMG2.PNG.webp" alt="Group Classes" class="service-img" loading="lazy">
+            <h3>Group Classes</h3>
+            <p>Join fun and energetic fitness classes with expert trainers.</p>
+        </div>
+    </div>
+</section>
+
+ <!-- Testimonials Section -->
+<section id="testimonials" class="testimonial-container" role="region" aria-labelledby="testimonials-heading">
+    <h2 id="testimonials-heading">What Our Clients Say</h2>
+    
+    <div class="testimonial-wrapper">
+        <div class="testimonial-item">
+            <img src="IMG7.PNG" alt="Alex Johnson - Client" class="testimonial-img" loading="lazy">
+            <p>"Best fitness experience ever! Highly recommend."</p>
+            <h4>- Alex Johnson</h4>
+        </div>
+        
+        <div class="testimonial-item">
+            <img src="IMG8.PNG" alt="Sarah Williams - Client" class="testimonial-img" loading="lazy">
+            <p>"Amazing trainers and supportive community!"</p>
+            <h4>- Sarah Williams</h4>
+        </div>
+    </div>
+</section>
+
+  <!-- BMI Calculator Section -->
+<section id="bmi-calculator" role="region" aria-labelledby="bmi-heading">
+    <h2 id="bmi-heading">BMI Calculator</h2>
+    
+    <div class="bmi-container">
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" placeholder="Enter weight in kg" min="1" required>
+
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" placeholder="Enter height in cm" min="1" required>
+
+        <button onclick="calculateBMI()" aria-label="Calculate BMI">Calculate BMI</button>
+
+        <div id="bmi-result"></div>
+
+        <div class="bmi-status">
+            <div class="bmi-meter"></div>
+        </div>
+
+        <div class="bmi-result-text"></div>
+    </div>
+</section>
+
+    <!-- Blog Section -->
+    <section id="blog">
+        <h2>Our Blog</h2>
+        <div class="blog-container">
+            <article class="blog-post">
+                <img src="blog1.png.webp" alt="5 Tips for a Healthier Lifestyle">
+                <div class="blog-content">
+                    <h3>5 Tips for a Healthier Lifestyle</h3>
+                    <p>Discover simple tips to improve your health and well-being.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </article>
+            <article class="blog-post">
+                <img src="blog2.png.webp" alt="Top 10 Exercises for Building Muscle">
+                <div class="blog-content">
+                    <h3>Top 10 Exercises for Building Muscle</h3>
+                    <p>Learn the best exercises to build muscle effectively.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </article>
+            <article class="blog-post">
+                <img src="blog3.png.webp" alt="Healthy Eating Habits">
+                <div class="blog-content">
+                    <h3>Healthy Eating Habits</h3>
+                    <p>Find out how to maintain a balanced diet for optimal health.</p>
+                    <a href="#">Read More</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+   <!-- Gallery Section -->
+<section id="gallery" role="region" aria-labelledby="gallery-heading">
+    <h2 id="gallery-heading">Gallery</h2>
+    <div class="gallery-container">
+        <img src="g1.png.webp" alt="Fitness Training Session" width="300" height="200" loading="lazy">
+        <img src="g2.png.webp" alt="Gym Equipment" width="300" height="200" loading="lazy">
+        <img src="g3.png.webp" alt="Group Workout Session" width="300" height="200" loading="lazy">
+    </div>
+</section>
+
+<!-- FAQ Section -->
+<section id="faq" role="region" aria-labelledby="faq-heading">
+    <h2 id="faq-heading">Frequently Asked Questions</h2>
+    <div class="faq-container">
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                <h3>What are your operating hours?</h3>
+            </button>
+            <p class="faq-answer">We are open from 6 AM to 10 PM, Monday to Saturday.</p>
+        </div>
+        <div class="faq-item">
+            <button class="faq-question" aria-expanded="false" onclick="toggleFAQ(this)">
+                <h3>Do you offer personal training?</h3>
+            </button>
+            <p class="faq-answer">Yes, we offer personalized training sessions with our expert trainers.</p>
+        </div>
+    </div>
+</section>
+
+<script>
+function toggleFAQ(button) {
+    const answer = button.nextElementSibling;
+    const isExpanded = button.getAttribute("aria-expanded") === "true";
+    button.setAttribute("aria-expanded", !isExpanded);
+    answer.style.display = isExpanded ? "none" : "block";
+}
+</script>
+
+    <!-- Social Media Links -->
+<section id="social-media" role="region" aria-labelledby="social-heading">
+    <h2 id="social-heading">Follow Us</h2>
+    <div class="social-media-links">
+        <a href="https://facebook.com" target="_blank" aria-label="Facebook" title="Follow us on Facebook">
+            <i class="fab fa-facebook"></i> Facebook
+        </a>
+        <a href="https://instagram.com" target="_blank" aria-label="Instagram" title="Follow us on Instagram">
+            <i class="fab fa-instagram"></i> Instagram
+        </a>
+        <a href="https://twitter.com" target="_blank" aria-label="Twitter" title="Follow us on Twitter">
+            <i class="fab fa-twitter"></i> Twitter
+        </a>
+    </div>
+</section>
+
+<!-- Newsletter Signup -->
+<section id="newsletter" role="region" aria-labelledby="newsletter-heading">
+    <h2 id="newsletter-heading">Subscribe to Our Newsletter</h2>
+    <form id="newsletter-form">
+        <input type="email" name="email" placeholder="Your Email" required aria-label="Enter your email">
+        <button type="submit" aria-label="Subscribe to Newsletter">Subscribe</button>
+    </form>
+</section>
+
+   <!-- Contact Section -->
+<section id="contact" role="region" aria-labelledby="contact-heading">
+    <h2 id="contact-heading">Contact Us</h2>
+    <form id="contact-form">
+        <input type="text" name="name" placeholder="Your Name" required aria-label="Enter your name">
+        <input type="email" name="email" placeholder="Your Email" required aria-label="Enter your email">
+        <input type="tel" name="phone" placeholder="Your Phone Number" required aria-label="Enter your phone number">
+        <select name="subject" required aria-label="Select a subject">
+            <option value="" disabled selected>Select a Subject</option>
+            <option value="general">General Inquiry</option>
+            <option value="support">Support</option>
+            <option value="feedback">Feedback</option>
+        </select>
+        <textarea name="message" placeholder="Your Message" required aria-label="Enter your message"></textarea>
+        <button type="submit" aria-label="Send Message">Send</button>
+    </form>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-content">
+        <div class="footer-section about">
+            <h3>About Us</h3>
+            <p>We help you achieve your fitness goals with personalized training & nutrition plans.</p>
+        </div>
+        <div class="footer-section links">
+            <h3>Quick Links</h3>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#testimonials">Testimonials</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-section contact">
+            <h3>Contact Us</h3>
+            <p>Email: <a href="mailto:info@fitnesswebsite.com">info@fitnesswebsite.com</a></p>
+            <p>Phone: <a href="tel:+1234567890">+123 456 7890</a></p>
+            <p>Address: 123 Fitness St, Wellness City</p>
+        </div>
+        <div class="footer-section social">
+            <h3>Follow Us</h3>
+            <a href="https://facebook.com" target="_blank" title="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="https://instagram.com" target="_blank" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://twitter.com" target="_blank" title="Twitter"><i class="fab fa-twitter"></i></a>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; 2025 Fitness Website. All Rights Reserved.</p>
+    </div>
+</footer>
+
+   <!-- Back to Top Button -->
+<button id="back-to-top" aria-label="Back to Top">⬆</button>
+
+<!-- Chatbox -->
+<div id="chatbox">
+    <!-- Chatbox content will be dynamically loaded -->
+</div>
+
+<!-- External Scripts -->
+<script src="scripts.js"></script>
+<script src="chatbox.js"></script>
+<script src="script.js"></script>
+
+<!-- Inline JavaScript -->
+<script>
+    // Smooth Scroll to Top
+    document.getElementById("back-to-top").addEventListener("click", function () {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+
+    // Show/hide Back to Top button on scroll
+    window.addEventListener("scroll", function () {
+        let btn = document.getElementById("back-to-top");
+        if (window.scrollY > 300) {
+            btn.style.display = "block";
+        } else {
+            btn.style.display = "none";
+        }
+    });
+
+    // Close Modal Function
+    function closeModal() {
+        document.getElementById("signup-modal").style.display = "none";
+    }
+
+    // Close modal when clicking outside of it
+    window.onclick = function (event) {
+        let modal = document.getElementById("signup-modal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    };
+</script>
+
+<!-- Sign Up Modal -->
+<div id="signup-modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">&times;</span>
+        <h2>Sign Up</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <button type="submit" aria-label="Submit Sign Up">Submit</button>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,676 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #111; /* Black background */
+    color: #ffd700; /* Gold text color */
+    text-align: center;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+button {
+    background: #ffd700;
+    color: #111;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+button:hover {
+    background: #ffcc00;
+    transform: scale(1.05);
+}
+
+button:focus {
+    outline: 2px solid #ffd700;
+    outline-offset: 2px;
+}
+
+a {
+    color: #ffd700;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #ffcc00;
+}
+
+/* Limiting transitions to necessary elements */
+* {
+    transition: color 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+
+/* Navigation Bar */
+nav {
+    background: #111;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.3s, box-shadow 0.3s;
+    border-bottom: 2px solid #ffd700;
+    border-radius: 0 0 10px 10px;
+}
+
+/* Add shadow effect when scrolled */
+nav.sticky-nav {
+    background: #222;
+    box-shadow: 0 4px 6px rgba(255, 215, 0, 0.3);
+}
+
+/* Navigation Logo */
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
+
+/* Navigation Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    color: #ffd700;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 10px 15px; /* Increased padding for better clickability */
+    transition: color 0.3s, transform 0.2s;
+}
+
+/* Smooth Hover Effect */
+.nav-links a:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
+/* Responsive Navbar */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 15px;
+    }
+    
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+}
+
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.85), rgba(255, 215, 0, 0.3)), 
+                url('about-01.jpg') no-repeat center center/cover;
+    color: #ffd700;
+    padding: 120px 40px;
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hero Text */
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 700px;
+    line-height: 1.6;
+}
+
+/* Hero Button */
+.hero button {
+    background: #ffd700;
+    color: #000;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    border-radius: 5px;
+}
+
+/* Smooth Hover Effect */
+.hero button:hover {
+    transform: scale(1.1);
+    background: #b8860b;
+    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.5);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero {
+        padding: 80px 20px;
+    }
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .hero p {
+        font-size: 18px;
+    }
+
+    .hero button {
+        font-size: 16px;
+        padding: 10px 16px;
+    }
+}
+/* Membership Section */
+.membership-container {
+    background-color: #222;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Membership Wrapper */
+.membership-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Membership Boxes */
+.membership-box {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    text-align: center;
+    max-width: 300px;
+}
+
+/* Hover Effect */
+.membership-box:hover {
+    transform: scale(1.07);
+    background: rgba(255, 215, 0, 0.2); /* Light yellow tint */
+    box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
+}
+
+/* Membership Images */
+.membership-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+/* Membership Titles */
+.membership-box h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+
+/* Membership Details */
+.membership-box p {
+    font-size: 16px;
+    color: #ddd;
+    line-height: 1.5;
+}
+
+/* Light Mode Adjustments */
+body.light-mode .membership-box {
+    background: #fff;
+    color: #000;
+    border: 1px solid #ddd;
+}
+
+body.light-mode .membership-box:hover {
+    background: rgba(255, 215, 0, 0.3); /* Softer yellow */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .membership-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .membership-box {
+        width: 90%;
+        max-width: 350px;
+    }
+}
+
+
+
+/* Service Section */
+.service-container {
+    background-color: #222;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+/* Service Wrapper */
+.service-wrapper {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Service Boxes */
+.service-box {
+    background: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(255, 215, 0, 0.3);
+    transition: transform 0.3s, background 0.3s, box-shadow 0.3s;
+    text-align: center;
+    max-width: 300px;
+}
+
+/* Hover Effect */
+.service-box:hover {
+    transform: scale(1.07);
+    background: rgba(255, 215, 0, 0.2); /* Light yellow tint */
+    box-shadow: 0 6px 15px rgba(255, 215, 0, 0.4);
+}
+
+/* Service Images */
+.service-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+}
+
+/* Service Titles */
+.service-box h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+
+/* Service Details */
+.service-box p {
+    font-size: 16px;
+    color: #ddd;
+    line-height: 1.5;
+}
+
+/* Light Mode Adjustments */
+body.light-mode .service-box {
+    background: #fff;
+    color: #000;
+    border: 1px solid #ddd;
+}
+
+body.light-mode .service-box:hover {
+    background: rgba(255, 215, 0, 0.3); /* Softer yellow */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .service-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-box {
+        width: 90%;
+        max-width: 350px;
+    }
+}
+
+/* Testimonials Section */
+#testimonials {
+    background: linear-gradient(to bottom, #222, #444);
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* Wrapper to Align Testimonials */
+.testimonial-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Individual Testimonial */
+.testimonial-item {
+    background: #333;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    max-width: 320px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Hover Effect */
+.testimonial-item:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 6px 16px rgba(255, 215, 0, 0.5);
+}
+
+/* Client Image (Square Instead of Circle) */
+.testimonial-img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    margin-bottom: 12px;
+    border: 4px solid #ffd700;
+    border-radius: 8px; /* Slightly rounded corners for a softer look */
+}
+
+/* Client Name */
+.testimonial-item h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+    color: #ffd700;
+}
+
+/* Client Review */
+.testimonial-item p {
+    font-size: 17px;
+    color: #ddd;
+    line-height: 1.7;
+    max-width: 280px;
+    word-wrap: break-word;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #testimonials {
+        padding: 50px 15px;
+    }
+
+    .testimonial-wrapper {
+        gap: 20px;
+    }
+
+    .testimonial-item {
+        max-width: 95%;
+        padding: 25px;
+    }
+
+    .testimonial-img {
+        width: 110px;
+        height: 110px;
+    }
+
+    .testimonial-item h3 {
+        font-size: 20px;
+    }
+
+    .testimonial-item p {
+        font-size: 15px;
+        line-height: 1.6;
+        max-width: 100%;
+    }
+}
+
+/* Light Mode Adjustments */
+body.light-mode .testimonial-item {
+    background: #fff;
+    color: #000;
+    border: 1px solid #ddd;
+}
+
+body.light-mode .testimonial-item:hover {
+    background: rgba(255, 215, 0, 0.2);
+}
+
+
+/* Contact Section Enhancements */
+#contact {
+    background: #222;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+form input, form textarea, form select, form button {
+    width: 100%;
+    padding: 12px; /* Increased padding for better UX */
+    border: 1px solid #ffd700;
+    background: #333;
+    color: #ffd700;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* Improve input focus effect */
+form input:focus, form textarea:focus, form select:focus {
+    outline: none;
+    border-color: #b8860b;
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+}
+
+/* Button Enhancements */
+form button {
+    background: #ffd700;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background 0.3s, transform 0.2s;
+    font-weight: bold;
+}
+
+form button:hover {
+    background: #b8860b;
+    transform: scale(1.05);
+}
+
+/* Footer Enhancements */
+footer {
+    background: #111;
+    color: #ffd700;
+    padding: 40px 0;
+    font-size: 14px;
+    position: relative;
+}
+
+/* Improved Layout for Mobile */
+.footer-content {
+    display: flex;
+    flex-wrap: wrap; /* Ensures better mobile responsiveness */
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.footer-section {
+    flex: 1;
+    padding: 20px;
+    min-width: 250px;
+}
+
+.footer-section h3 {
+    margin-bottom: 20px;
+    font-size: 18px;
+    color: #ffd700;
+}
+
+.footer-section p, .footer-section ul, .footer-section a {
+    color: #ccc;
+    margin-bottom: 10px;
+    text-decoration: none;
+}
+
+/* Fix Footer Bottom Issue */
+.footer-bottom {
+    background: #000;
+    color: #ffd700;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+    position: relative; /* Changed from absolute to relative */
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+/* Fade-in Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.new-layout {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+
+/* Back-to-Top Button Enhancements */
+#back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: none;
+    background: #ffd700;
+    color: #222; /* Better contrast */
+    border: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(255, 215, 0, 0.3);
+    transition: opacity 0.3s, transform 0.2s;
+}
+
+/* Button Hover Effect */
+#back-to-top:hover {
+    background: #b8860b;
+    transform: scale(1.1);
+}
+
+/* Blog Section */
+#blog {
+    background: linear-gradient(to bottom, #222, #444);
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.blog-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* Blog Post Styling */
+.blog-post {
+    background: #333;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 320px;
+    text-align: left;
+}
+
+/* Blog Post Hover Effect */
+.blog-post:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(255, 215, 0, 0.4);
+}
+
+/* Blog Image Fix */
+.blog-post img {
+    width: 100%;
+    height: 200px; /* Fixed height for uniformity */
+    object-fit: cover;
+}
+
+/* Blog Content Enhancements */
+.blog-content {
+    padding: 20px;
+}
+
+.blog-content h3 {
+    color: #ffd700;
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+.blog-content p {
+    color: #ddd;
+    margin-bottom: 15px;
+    line-height: 1.5;
+    font-size: 16px;
+}
+
+/* Blog Read More Link */
+.blog-content a {
+    color: #ffd700;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* Link Hover Effect */
+.blog-content a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .blog-post {
+        max-width: 90%;
+    }
+
+    .blog-post img {
+        height: 180px;
+    }
+
+    .blog-content {
+        padding: 15px;
+    }
+}

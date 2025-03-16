@@ -1,0 +1,985 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 10px;
+  background: linear-gradient(135deg, #000, #090000, #000);
+  background-size: 400% 400%;
+  animation: gradientBackground 12s ease infinite;
+  color: #fff;
+  text-align: center;
+  border: 5px solid #ffd700;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+body.light-mode {
+  background: #fff;
+  color: #000;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Button styles */
+button {
+  outline: none;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:focus {
+  outline: 2px solid #ffd700;
+  outline-offset: 2px;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+/* Anchor links */
+a:hover {
+  text-decoration: underline;
+}
+
+/* Optimized animations */
+@keyframes gradientBackground {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+/* Remove unnecessary global transitions */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+
+/* Navigation Bar */
+nav {
+  background: #111;
+  padding: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  transition: background 0.3s, box-shadow 0.3s;
+  border-bottom: 2px solid #ffd700;
+  border-radius: 0 0 10px 10px;
+  box-shadow: 0 2px 5px rgba(255, 215, 0, 0.2);
+}
+
+.nav-logo {
+  display: flex;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ffd700;
+}
+
+/* Light Mode */
+body.light-mode nav {
+  background: #fff;
+  border-bottom: 2px solid #000;
+}
+
+body.light-mode .nav-links a {
+  color: #000;
+}
+
+body.light-mode .nav-links a:hover {
+  color: #ffd700;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+              url('about-01.jpg') no-repeat center/cover;
+  color: #fff;
+  height: 100vh;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  animation: fadeIn 2s ease-in-out;
+}
+
+.hero h1, 
+.hero p {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  color: #ffd700;
+}
+
+.hero h1 {
+  font-size: 3em;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.5em;
+  margin-bottom: 30px;
+}
+
+.hero button {
+  background: #ffd700;
+  color: #000;
+  padding: 15px 30px;
+  border: none;
+  cursor: pointer;
+  font-size: 18px;
+  transition: transform 0.3s ease, background 0.3s ease;
+  border-radius: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+.hero button:hover {
+  transform: scale(1.1);
+  background: #b8860b;
+}
+
+/* Light Mode */
+body.light-mode .hero {
+  background: linear-gradient(to right, rgba(255, 255, 255, 0.7), rgba(255, 255, 255, 0.7)), 
+              url('about-01.jpg') no-repeat center/cover;
+  color: #000;
+  backdrop-filter: blur(5px);
+}
+
+body.light-mode .hero h1,
+body.light-mode .hero p {
+  color: #000;
+  text-shadow: none;
+}
+
+body.light-mode .hero button {
+  background: #000;
+  color: #ffd700;
+}
+
+body.light-mode .hero button:hover {
+  background: #333;
+}
+
+
+/* Membership Section */
+.membership-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url('package.jpg') no-repeat center center/cover;
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 165, 0, 0.5);
+  width: 100%;
+}
+
+/* Membership Wrapper */
+.membership-wrapper {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+}
+
+/* Membership Boxes */
+.membership-box {
+  background: #222;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 165, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, margin 0.3s ease;
+  text-align: center;
+  width: 30%; /* Ensures multiple boxes fit side-by-side */
+  min-width: 250px;
+  cursor: pointer;
+  margin: 0; /* Ensure no extra space */
+}
+
+.membership-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(255, 165, 0, 0.4);
+  margin-top: -5px; /* Small lift effect */
+}
+
+/* Membership Active State */
+.membership-box.active {
+  background: #e6b800 !important; /* Darker Gold */
+  color: #000 !important;
+  box-shadow: 0 6px 12px rgba(255, 140, 0, 0.4);
+}
+
+/* Light Mode Fix */
+body.light-mode .membership-box {
+  background: #f8f8f8 !important; /* Light Gray */
+  color: #222 !important;
+}
+
+body.light-mode .membership-box:hover {
+  background: #e6b800 !important; /* Darker Gold */
+  color: #000 !important;
+}
+
+/* Membership Images */
+.membership-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .membership-wrapper {
+    flex-wrap: wrap; /* Allows stacking on smaller screens */
+    flex-direction: column;
+    align-items: center;
+  }
+  .membership-box {
+    width: 90%; /* Makes boxes take full width on mobile */
+    margin-bottom: 15px; /* Adds space between stacked boxes */
+  }
+}
+
+/* Modal Styling */
+.modal {
+  display: none;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  width: 300px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  color: black;
+}
+
+.modal-content button {
+  margin-top: 10px;
+  padding: 8px;
+  background: #ffd700;
+  color: black;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.close-btn {
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+/* Service Section */
+.service-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  background: linear-gradient(to bottom, rgba(5, 0, 0, 0.8), rgba(5, 0, 0, 0.8)), url('IMG2.PNG.webp') no-repeat center center/cover;
+  background-size: cover;
+  padding: 40px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+/* Service Boxes */
+.service-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  width: 100%;
+  max-width: 900px;
+}
+
+.service-box {
+  background: #333;
+  padding: 16px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+  max-width: 280px;
+  width: 100%; /* Make it responsive */
+  cursor: pointer;
+}
+
+.service-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(255, 215, 0, 0.4);
+}
+
+/* Fix for unwanted bright yellow background */
+.service-box.active {
+  background: #e6b800; /* Darker Gold */
+  color: #000;
+  box-shadow: 0 6px 12px rgba(255, 165, 0, 0.4);
+}
+
+/* Light Mode Fix */
+body.light-mode .service-box {
+  background: #f8f8f8; /* Light Gray */
+  color: #222;
+}
+
+body.light-mode .service-box:hover {
+  background: #e6b800; /* Darker Gold */
+  color: #000;
+}
+
+/* Service Images */
+.service-img {
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
+  object-fit: cover;
+  margin-bottom: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .service-wrapper {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .service-box {
+    margin-bottom: 15px; /* Adds space between stacked boxes */
+  }
+}
+
+/* Testimonials Section */
+#testimonials {
+  background: linear-gradient(to bottom, #080000, #050000);
+  padding: 50px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+  text-align: center;
+}
+
+/* Wrapper to Align Testimonials */
+.testimonial-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 900px;
+  margin: auto;
+}
+
+/* Individual Testimonial Box */
+.testimonial-item {
+  background: #333;
+  text-align: center;
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.testimonial-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(255, 215, 0, 0.4);
+}
+
+/* Client Image */
+.testimonial-img {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  margin-bottom: 10px;
+  border: 3px solid #ffd700;
+  border-radius: 0; /* Makes the image square */
+}
+
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  #testimonials {
+    padding: 40px 10px;
+  }
+
+  .testimonial-item {
+    max-width: 100%;
+    padding: 15px;
+  }
+
+  .testimonial-img {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+/* Light Mode */
+body.light-mode .testimonial-item {
+  background: #fff;
+  color: #fdfbfb;
+  border: 1px solid #ddd;
+}
+
+body.light-mode .testimonial-item:hover {
+  background: rgba(252, 251, 251, 0.2);
+}
+/* BMI Calculator Section */
+#bmi-calculator {
+  background: #060000;
+  padding: 30px 20px;
+  text-align: center;
+  border-radius: 10px; /* Rounded corners for the whole section */
+}
+
+/* BMI Container */
+.bmi-container {
+  border-radius: 10px; /* Rounded corners */
+  padding: 20px;
+  background-color: #070000; /* Light background color for the container */
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Optional: adds a slight shadow to enhance the look */
+}
+
+/* Input Fields in the BMI Container */
+.bmi-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ffd700;
+  background: #444;
+  color: #ffd700;
+  border-radius: 5px; /* Rounded input fields */
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+/* Focus State for Input Fields */
+.bmi-container input:focus {
+  border-color: #b8860b; /* Focus border color */
+  outline: none;
+}
+
+/* Button Styling */
+.bmi-container button {
+  background: #ffd700;
+  color: #000;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  border-radius: 5px; /* Rounded button */
+  transition: background 0.3s, transform 0.2s ease;
+}
+
+/* Hover State for Button */
+.bmi-container button:hover {
+  background: #b8860b;
+  transform: scale(1.05); /* Slight scale effect */
+}
+
+/* BMI Status Meter */
+.bmi-status {
+  margin-top: 15px;
+  height: 20px;
+  width: 100%;
+  background: #444;
+  border-radius: 5px; /* Rounded corners for the status bar */
+  position: relative;
+}
+
+/* The Dynamic Meter */
+.bmi-meter {
+  height: 100%;
+  width: 0%; /* Will be dynamically set */
+  background: #ffd700;
+  border-radius: 5px; /* Rounded corners for the meter */
+  transition: width 0.5s ease-in-out;
+}
+
+/* BMI Result Text */
+.bmi-result-text {
+  margin-top: 10px;
+  color: #ffd700;
+  font-size: 18px;
+}
+
+/* Blog Section */
+#blog {
+  background: linear-gradient(to bottom, #060000, #040000);
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+.blog-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Individual Blog Post Styling */
+.blog-post {
+  background: #333;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(255, 215, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 300px;
+  text-align: left;
+  cursor: pointer;
+}
+
+.blog-post:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 12px rgba(255, 215, 0, 0.6); /* Adds a stronger shadow effect */
+}
+
+/* Blog Post Image */
+.blog-post img {
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(255, 215, 0, 0.3);
+}
+
+/* Blog Content Styling */
+.blog-content {
+  padding: 15px;
+}
+
+.blog-content h3 {
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+
+.blog-content p {
+  color: #ccc;
+  margin-bottom: 15px;
+}
+
+.blog-content a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.blog-content a:hover {
+  text-decoration: underline;
+}
+
+/* Light Mode Styling */
+body.light-mode #blog {
+  background: #fff;
+  color: #000;
+}
+
+body.light-mode .blog-post {
+  background: #fff;
+  color: #000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Lighter shadow for light mode */
+}
+
+body.light-mode .blog-post:hover {
+  background: #ffd700;
+  box-shadow: 0 8px 12px rgba(255, 165, 0, 0.5); /* More prominent hover shadow in light mode */
+}
+
+body.light-mode .blog-content h3 {
+  color: #000;
+}
+
+body.light-mode .blog-content p {
+  color: #444;
+}
+
+/* Responsive Design for Blog Section */
+@media (max-width: 768px) {
+  .blog-container {
+    flex-direction: column; /* Stacks the posts on smaller screens */
+    align-items: center;
+  }
+
+  .blog-post {
+    max-width: 100%; /* Ensures posts take up full width on mobile */
+  }
+}
+
+/* Newsletter Signup */
+#newsletter {
+  background: linear-gradient(to bottom, #000000, #000000);
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+  text-align: center;
+}
+
+#newsletter-form input,
+#newsletter-form button {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ffd700;
+  background: #333;
+  color: #fff;
+  border-radius: 5px;
+  width: 100%; /* Makes form elements take full width */
+  max-width: 400px; /* Sets a max-width for larger screens */
+}
+
+#newsletter-form button {
+  background: linear-gradient(45deg, #ffd700, #b8860b);
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+#newsletter-form button:hover {
+  background: linear-gradient(45deg, #b8860b, #ffd700);
+}
+
+/* Focus Effects for Accessibility */
+#newsletter-form input:focus,
+#newsletter-form button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 215, 0, 0.8);
+}
+
+/* Light Mode Styling */
+body.light-mode #newsletter {
+  background: #fff;
+  color: #000;
+}
+
+body.light-mode #newsletter-form input,
+body.light-mode #newsletter-form button {
+  background: #fff;
+  color: #000;
+  border: 1px solid #ddd;
+}
+
+body.light-mode #newsletter-form button {
+  background: #000;
+  color: #ffd700;
+}
+
+body.light-mode #newsletter-form button:hover {
+  background: #333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #newsletter-form input,
+  #newsletter-form button {
+    width: 90%; /* Makes form fields take up 90% of the container on mobile */
+  }
+}
+
+/* Contact Section */
+#contact {
+  background: linear-gradient(to bottom, #000000, #020000);
+  padding: 30px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+form input,
+form textarea,
+form select,
+form button {
+  width: 100%;
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 1px solid #ffd700;
+  background: #333;
+  color: #fff;
+  border-radius: 5px;
+}
+
+form textarea {
+  min-height: 150px; /* Ensure textarea has enough space */
+}
+
+form button {
+  background: linear-gradient(45deg, #ffd700, #b8860b);
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background 0.3s;
+}
+
+form button:hover {
+  background: linear-gradient(45deg, #b8860b, #ffd700);
+}
+
+/* Focus Effects for Form Elements */
+form input:focus,
+form textarea:focus,
+form select:focus,
+form button:focus {
+  outline: none;
+  box-shadow: 0 0 5px rgba(255, 215, 0, 0.8);
+}
+
+/* Light Mode Styling */
+body.light-mode #contact {
+  background: #fff;
+  color: #000;
+}
+
+body.light-mode form input,
+body.light-mode form textarea,
+body.light-mode form select,
+body.light-mode form button {
+  background: #fff;
+  color: #000;
+  border: 1px solid #ddd;
+}
+
+body.light-mode form button {
+  background: #000;
+  color: #ffd700;
+}
+
+body.light-mode form button:hover {
+  background: #333;
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(to bottom, #070700, #050505);
+  color: #fff;
+  padding: 40px 0;
+  position: relative;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  padding: 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-section {
+  flex: 1;
+  padding: 20px;
+}
+
+.footer-section h3 {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section a {
+  color: #ccc;
+  margin-bottom: 10px;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section ul li {
+  margin-bottom: 10px;
+}
+
+.footer-section a:hover {
+  color: #ffd700;
+}
+
+.footer-bottom {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  background: rgba(255, 215, 0, 0.5);
+}
+
+.footer-bottom p {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Frosted Glass Effect */
+.frosted-glass {
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 10px;
+  padding: 20px;
+}
+
+/* Responsive Design for Footer */
+@media (max-width: 768px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-section {
+    padding: 10px;
+    text-align: center;
+  }
+}
+
+/* Gallery Section */
+#gallery {
+  background: linear-gradient(to bottom, #080000, #000000);
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}
+
+.gallery-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: auto;
+}
+
+.gallery-container img {
+  width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gallery-container img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(255, 215, 0, 0.4);
+}
+
+/* Responsive Fixes */
+@media (max-width: 768px) {
+  #gallery {
+    padding: 40px 10px;
+  }
+
+  .gallery-container img {
+    width: 100%;
+    height: auto;
+  }
+}
+
+/* Light Mode */
+body.light-mode .gallery-container img {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+body.light-mode .gallery-container img:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+}
+/* FAQ Section */
+#faq {
+  background: linear-gradient(to bottom, #080000, #030000);
+  padding: 50px 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}
+
+.faq-container {
+  max-width: 900px;
+  margin: auto;
+  padding-top: 20px;
+}
+
+/* FAQ Item */
+.faq-item {
+  background: #333;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(255, 215, 0, 0.3);
+  margin-bottom: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(255, 215, 0, 0.4);
+}
+
+.faq-question {
+  background: transparent;
+  border: none;
+  color: #ffd700;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: left;
+  width: 100%;
+  padding: 10px 0;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.faq-question:hover {
+  color: #b8860b;
+}
+
+.faq-answer {
+  display: none;
+  margin-top: 10px;
+  color: #ffd700;
+  font-size: 16px;
+  text-align: left;
+}
+
+/* Light Mode */
+body.light-mode .faq-item {
+  background: #fff;
+  color: #000;
+  border: 1px solid #ddd;
+}
+
+body.light-mode .faq-question {
+  color: #000;
+}
+
+body.light-mode .faq-question:hover {
+  color: #b8860b;
+}
+
+body.light-mode .faq-answer {
+  color: #000;
+}
